@@ -17,7 +17,7 @@ app.use(cors());
 
 const endpoint = `${process.env.HOPEX_GRAPHQL_URL}/HOPEXGraphQL/api/${process.env.SCHEMA}`;
 
-const gqlClient = new GraphQLClient(endpoint, { headers });
+// const gqlClient = new GraphQLClient(endpoint, { headers });
 
 app.get('/toto', (req: Request, res: Response) => {
 	res.send('Hello toto');
