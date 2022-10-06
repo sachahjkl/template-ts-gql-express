@@ -9,7 +9,7 @@ const app: Application = express();
 const port = process.env.PORT || 4875;
 
 const headers = [
-	['x-api-key', 'VITE_X_API_KEY'],
+	['x-api-key', process.env.X_API_KEY],
 	['Content-Type', 'application/json']
 ] as HeadersInit;
 
