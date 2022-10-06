@@ -1,0 +1,2 @@
+name=template-ts-gql-express
+description=Template de projet utilisant ExpressJS, GraphQL, Typescript et Swagger pour créer un API complète et documentée.

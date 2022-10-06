@@ -1,8 +1,0 @@
-name: "template-ts-gql-express"
-description: "Template de projet utilisant ExpressJS, GraphQL, Typescript et Swagger pour créer un API complète et documentée."
-topics: []
-homepage: ""
-source:
-  provider: gitlab
-  namespace: "sachahjkl"
-  path: "sachahjkl/template-ts-gql-express"
