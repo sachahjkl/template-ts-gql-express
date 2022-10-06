@@ -1,6 +1,7 @@
 import { Application, Request, Response } from 'express';
 import { GraphQLClient } from 'graphql-request';
 import dotenv from 'dotenv-flow';
+import cors from 'cors';
 import express from 'express';
 dotenv.config(); // charge les variables dans les fichiers ".env.*" dans l'environnement du processus
 
@@ -11,6 +12,8 @@ const headers = [
 	['x-api-key', 'VITE_X_API_KEY'],
 	['Content-Type', 'application/json']
 ] as HeadersInit;
+
+app.use(cors());
 
 const endpoint = `${process.env.HOPEX_GRAPHQL_URL}/HOPEXGraphQL/api/${process.env.SCHEMA}`;
 
