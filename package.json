@@ -2,7 +2,7 @@
 	"name": "api.cassini",
 	"version": "1.0.0",
 	"description": "APIs de CASSINI",
-	"main": "index.js",
+	"main": "dist/app.js",
 	"type": "module",
 	"scripts": {
 		"dev:ts": "tsc -w",
