@@ -29,3 +29,11 @@ router.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
 		stack: err.stack
 	});
 });
+
+router.use(function (req, res, _next) {
+	res.status(404).render('error', {
+		status: res.statusCode,
+		message: `Page ${req.url} introuvable`,
+		stack: null
+	});
+});
