@@ -11,7 +11,7 @@
 		"prod": "node dist/app.js",
 		"build": "tsc",
 		"build-docs": "node ./swagger.js",
-		"docs": "concurrently npm:build*"
+		"docs": "concurrently npm:build-docs npm:dev"
 	},
 	"author": {
 		"email": "yavuz.OZTURK@ag2rlamondiale.fr",

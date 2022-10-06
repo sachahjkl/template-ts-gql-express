@@ -18,6 +18,9 @@
   "paths": {
     "/api-docs": {
       "get": {
+        "tags": [
+          "documentation"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -25,6 +28,9 @@
     },
     "/": {
       "get": {
+        "tags": [
+          "redirect"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -32,6 +38,79 @@
     },
     "/v1/": {
       "get": {
+        "tags": [
+          "v1"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/1": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/2": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/3": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/4": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/5": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -43,6 +122,9 @@
     },
     "/v2/": {
       "get": {
+        "tags": [
+          "v2"
+        ],
         "description": "",
         "parameters": [],
         "responses": {

@@ -31,6 +31,4 @@ const doc = {
 const outputFile = './src/swagger.json';
 const endpointsFiles = ['./src/app.ts'];
 
-swaggerAutogen({ language: 'fr-FR' })(outputFile, endpointsFiles, doc).then(async () => {
-	await import('./dist/app.js');
-});
+swaggerAutogen({ language: 'fr-FR' })(outputFile, endpointsFiles, doc);

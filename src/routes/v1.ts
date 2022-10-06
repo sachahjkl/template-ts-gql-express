@@ -10,3 +10,19 @@ router.use(function (_, __, next) {
 router.get('/', function (_, res) {
 	res.send("let's go !!");
 });
+router.get('/1', function (_, res) {
+	res.send("let's go !!");
+});
+router.get('/2', function (_, res) {
+	res.send("let's go !!");
+});
+router.get('/3', function (_, res) {
+	res.send("let's go !!");
+});
+router.get('/4', function (_, res) {
+	res.send("let's go !!");
+});
+router.get('/5', function (_, res) {
+	res.send("let's go !!");
+});
+

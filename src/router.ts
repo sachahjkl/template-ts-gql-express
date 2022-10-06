@@ -12,13 +12,27 @@ import { router as v2 } from './routes/v2.js';
 export const router = express.Router();
 
 router.use(cors());
-router.use('/v1', v1);
-router.use('/v2', v2);
+router.use(
+	'/v1',
+	v1
+	// #swagger.tags = ['v1']
+);
+router.use(
+	'/v2',
+	v2
+
+	// #swagger.tags = ['v2']
+);
 
 router.use('/api-docs', swaggerUi.serve);
-router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+router.get(
+	'/api-docs',
+	swaggerUi.setup(swaggerDocument)
+	// #swagger.tags = ['documentation']
+);
 
 router.get('/', function (_, res) {
+	// #swagger.tags = ['redirect']
 	return res.redirect('/api-docs');
 });
 
