@@ -1,28 +1,16 @@
-import { Application, Request, Response } from 'express';
-import { GraphQLClient } from 'graphql-request';
-import dotenv from 'dotenv-flow';
-import cors from 'cors';
 import express from 'express';
-dotenv.config(); // charge les variables dans les fichiers ".env.*" dans l'environnement du processus
+import dotenv from 'dotenv-flow';
+import { router } from './router.js';
 
-const app: Application = express();
-const port = process.env.PORT || 4875;
+// charge les variables dans les fichiers ".env.*" dans l'environnement du processus
+dotenv.config();
+const port = process.env.PORT || process.env.LOCAL_PORT || 4875;
 
-const headers = [
-	['x-api-key', process.env.X_API_KEY],
-	['Content-Type', 'application/json']
-] as HeadersInit;
+const app = express();
+app.set('view engine', 'ejs');
 
-app.use(cors());
-
-const endpoint = `${process.env.HOPEX_GRAPHQL_URL}/HOPEXGraphQL/api/${process.env.SCHEMA}`;
-
-// const gqlClient = new GraphQLClient(endpoint, { headers });
-
-app.get('/toto', (req: Request, res: Response) => {
-	res.send('Hello toto');
-});
+app.use(router);
 
 app.listen(port, function () {
-	console.log(`App is listening on port ${port} !`);
+	console.log(`App is listening on port http://localhost:${port} !`);
 });

@@ -1,0 +1,31 @@
+import express, { NextFunction, Request, Response } from 'express';
+
+import cors from 'cors';
+
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.json' assert { type: 'json' };
+
+import { router as v1 } from './routes/v1.js';
+import { router as v2 } from './routes/v2.js';
+// import { router as docs } from './routes/docs.js';
+
+export const router = express.Router();
+
+router.use(cors());
+router.use('/v1', v1);
+router.use('/v2', v2);
+
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+
+router.get('/', function (_, res) {
+	return res.redirect('/api-docs');
+});
+
+router.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+	res.status(500).render('error', {
+		status: res.statusCode,
+		message: err.message,
+		stack: err.stack
+	});
+});
