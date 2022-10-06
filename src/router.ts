@@ -5,11 +5,21 @@ import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json' assert { type: 'json' };
 
+export const router = express.Router();
+
+const options = {
+	explorer: true
+};
+router.use('/api-docs', swaggerUi.serve);
+router.get(
+	'/api-docs',
+	swaggerUi.setup(swaggerDocument, options)
+	// #swagger.tags = ['documentation']
+);
+
 import { router as v1 } from './routes/v1.js';
 import { router as v2 } from './routes/v2.js';
 // import { router as docs } from './routes/docs.js';
-
-export const router = express.Router();
 
 router.use(cors());
 router.use(
@@ -22,13 +32,6 @@ router.use(
 	v2
 
 	// #swagger.tags = ['v2']
-);
-
-router.use('/api-docs', swaggerUi.serve);
-router.get(
-	'/api-docs',
-	swaggerUi.setup(swaggerDocument)
-	// #swagger.tags = ['documentation']
 );
 
 router.get('/', function (_, res) {
